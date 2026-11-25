@@ -1,4 +1,5 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿using System.Drawing;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace c_basics_session04
 {
@@ -76,11 +77,23 @@ namespace c_basics_session04
             // Rewrite the method from question 5 as AddBonusPagesByRef(ref int pages) using ref. 
             // Call it and print pages afterward. How is the result different from question 5 ?
 
-            int pages = 400;
-            AddBonusPagesByRef(ref pages);
-            Console.WriteLine(pages);  // 450
+            //int pages = 400;
+            //AddBonusPagesByRef(ref pages);
+            //Console.WriteLine(pages);  // 450
 
             // Because that's passing by ref - value type so the method change the original value not a copy .
+
+            #endregion
+
+            #region Question08
+            // Write a method ReplaceArray(ref double[] prices) that replaces prices entirely with a 
+            // new array { 10.0, 12.5, 15.0 }.Call it with your prices array and print prices.Length afterward.
+
+            double[] prices = { 25.5, 40.0 };
+            ReplaceArray(ref prices);
+            Console.WriteLine(prices.Length);   // 3   passing by reference - reference type
+
+
 
             #endregion
         }
@@ -114,5 +127,13 @@ namespace c_basics_session04
         {
             pages += 50;
         }
+
+        // Question08
+        public static void ReplaceArray(ref double[] prices)
+        {
+            prices = new double[] { 10.0, 12.5, 15.0 };
+        }
+
+
     }
 }
