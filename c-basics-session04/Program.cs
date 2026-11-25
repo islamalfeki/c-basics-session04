@@ -42,7 +42,20 @@ namespace c_basics_session04
             // Write a method PrintBookTitle(string title) that prints "Book title: " + title. Call it with 
             //"Clean Code".
 
-            PrintBookTitle("Clean Code");
+            //PrintBookTitle("Clean Code");
+            #endregion
+
+            #region Question05
+            // Write a method AddBonusPages(int pages) that adds 50 to pages. Call it with a variable 
+            //int pages = 400; and print pages afterward. What do you expect to see, and why? 
+
+            int pages = 400;
+            AddBonusPages(pages);
+            Console.WriteLine(pages);
+
+            // I expect it will print 400 because that's passing by value - value type so the function takes a copy
+            // from pages in a stack frame and it will be removed from stack after function finish .
+
             #endregion
         }
 
@@ -56,6 +69,12 @@ namespace c_basics_session04
         public static void PrintBookTitle (string title)
         {
             Console.WriteLine("Book Title: " + title);
+        }
+
+        // Question05
+        public static void AddBonusPages (int pages)
+        {
+            pages += 50 ;
         }
     }
 }
