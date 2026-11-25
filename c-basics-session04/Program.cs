@@ -49,12 +49,26 @@ namespace c_basics_session04
             // Write a method AddBonusPages(int pages) that adds 50 to pages. Call it with a variable 
             //int pages = 400; and print pages afterward. What do you expect to see, and why? 
 
-            int pages = 400;
-            AddBonusPages(pages);
-            Console.WriteLine(pages);
+            //int pages = 400;
+            //AddBonusPages(pages);
+            //Console.WriteLine(pages);
 
             // I expect it will print 400 because that's passing by value - value type so the function takes a copy
             // from pages in a stack frame and it will be removed from stack after function finish .
+
+            #endregion
+
+            #region Question06
+            // Write a method ApplyDiscount(double[] prices) that subtracts 5 from prices[0]. Call it 
+            // with double[] prices = { 25.5, 40.0 }; and print prices[0] afterward.What do you expect to
+            //see, and why?
+
+            double[] prices = { 25.5, 40.0 };
+            ApplyDiscount(prices);
+            Console.WriteLine(prices[0]);
+
+            // I expect it will print 20.5 because that's passing by value - reference type so both array and method
+            // refers to the same address in heap
 
             #endregion
         }
@@ -75,6 +89,12 @@ namespace c_basics_session04
         public static void AddBonusPages (int pages)
         {
             pages += 50 ;
+        }
+
+        // Question06 
+        public static void ApplyDiscount(double[] prices)
+        {
+            prices[0] -= 5;
         }
     }
 }
