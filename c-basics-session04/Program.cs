@@ -63,12 +63,24 @@ namespace c_basics_session04
             // with double[] prices = { 25.5, 40.0 }; and print prices[0] afterward.What do you expect to
             //see, and why?
 
-            double[] prices = { 25.5, 40.0 };
-            ApplyDiscount(prices);
-            Console.WriteLine(prices[0]);
+            //double[] prices = { 25.5, 40.0 };
+            //ApplyDiscount(prices);
+            //Console.WriteLine(prices[0]);
 
             // I expect it will print 20.5 because that's passing by value - reference type so both array and method
             // refers to the same address in heap
+
+            #endregion
+
+            #region Question07
+            // Rewrite the method from question 5 as AddBonusPagesByRef(ref int pages) using ref. 
+            // Call it and print pages afterward. How is the result different from question 5 ?
+
+            int pages = 400;
+            AddBonusPagesByRef(ref pages);
+            Console.WriteLine(pages);  // 450
+
+            // Because that's passing by ref - value type so the method change the original value not a copy .
 
             #endregion
         }
@@ -92,9 +104,15 @@ namespace c_basics_session04
         }
 
         // Question06 
-        public static void ApplyDiscount(double[] prices)
+        public static void ApplyDiscount (double[] prices)
         {
             prices[0] -= 5;
+        }
+
+        // Question07
+        public static void AddBonusPagesByRef(ref int pages)
+        {
+            pages += 50;
         }
     }
 }
