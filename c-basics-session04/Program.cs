@@ -102,14 +102,26 @@ namespace c_basics_session04
             // price to 25.5 if title is "Clean Code", otherwise returns false and sets price to 0.Call it
             // and print the price if found
 
+            //string title = "Clean Code";
+            //double price;                  // out parameter does not need to be initialized before calling 
+
+            //TryGetPrice(title , out price);
+
+            //Console.WriteLine(price);
+
+
+            #endregion
+
+            #region Question10
+            // Write a method PrintBookInfo(string title, int pages = 300) where pages is optional. Call 
+            //it once with only a title, and once passing both a title and pages.
+
             string title = "Clean Code";
-            double price;                  // out parameter does not need to be initialized before calling 
+            PrintBookInfo(title);        // pages => optional parameter 
 
-            TryGetPrice(title , out price);
-
-            Console.WriteLine(price);
-
-
+            int pages = 464;
+            PrintBookInfo(title, pages);
+            
             #endregion
         }
 
@@ -163,6 +175,12 @@ namespace c_basics_session04
                 return false;
             }
                 
+        }
+
+        // Question10
+        public static void PrintBookInfo(string title, int pages = 300)
+        {
+            Console.WriteLine($"Book Title: {title} , Pages: {pages}" );
         }
 
 
