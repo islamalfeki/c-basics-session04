@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Reflection;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace c_basics_session04
@@ -116,13 +117,22 @@ namespace c_basics_session04
             // Write a method PrintBookInfo(string title, int pages = 300) where pages is optional. Call 
             //it once with only a title, and once passing both a title and pages.
 
-            string title = "Clean Code";
-            PrintBookInfo(title);        // pages => optional parameter 
+            //string title = "Clean Code";
+            //PrintBookInfo(title);        // pages => optional parameter 
 
-            int pages = 464;
-            PrintBookInfo(title, pages);
-            
+            //int pages = 464;
+            //PrintBookInfo(title, pages);
+
             #endregion
+
+            #region Question11
+            // Using the PrintBookInfo method from the question above, call it by naming the 
+            // parameters, passing pages before title.
+
+            PrintBookInfo(pages: 464, title: "Clean Code");  // calling by naming parameters
+
+            #endregion
+
         }
 
         // Question03
@@ -182,6 +192,8 @@ namespace c_basics_session04
         {
             Console.WriteLine($"Book Title: {title} , Pages: {pages}" );
         }
+
+
 
 
     }
