@@ -89,10 +89,25 @@ namespace c_basics_session04
             // Write a method ReplaceArray(ref double[] prices) that replaces prices entirely with a 
             // new array { 10.0, 12.5, 15.0 }.Call it with your prices array and print prices.Length afterward.
 
-            double[] prices = { 25.5, 40.0 };
-            ReplaceArray(ref prices);
-            Console.WriteLine(prices.Length);   // 3   passing by reference - reference type
+            //double[] prices = { 25.5, 40.0 };
+            //ReplaceArray(ref prices);
+            //Console.WriteLine(prices.Length);   // 3   passing by reference - reference type
 
+
+
+            #endregion
+
+            #region Question09
+            // Write a method bool TryGetPrice(string title, out double price) that returns true and sets 
+            // price to 25.5 if title is "Clean Code", otherwise returns false and sets price to 0.Call it
+            // and print the price if found
+
+            string title = "Clean Code";
+            double price;                  // out parameter does not need to be initialized before calling 
+
+            TryGetPrice(title , out price);
+
+            Console.WriteLine(price);
 
 
             #endregion
@@ -105,19 +120,19 @@ namespace c_basics_session04
         }
 
         // Question04
-        public static void PrintBookTitle (string title)
+        public static void PrintBookTitle(string title)
         {
             Console.WriteLine("Book Title: " + title);
         }
 
         // Question05
-        public static void AddBonusPages (int pages)
+        public static void AddBonusPages(int pages)
         {
-            pages += 50 ;
+            pages += 50;
         }
 
         // Question06 
-        public static void ApplyDiscount (double[] prices)
+        public static void ApplyDiscount(double[] prices)
         {
             prices[0] -= 5;
         }
@@ -132,6 +147,22 @@ namespace c_basics_session04
         public static void ReplaceArray(ref double[] prices)
         {
             prices = new double[] { 10.0, 12.5, 15.0 };
+        }
+
+        // Question09
+        public static bool TryGetPrice(string title, out double price)
+        {
+           if (title == "Clean Code")
+            {
+                price = 25.5;
+                return true;
+            }
+            else
+            {
+                price = 0;
+                return false;
+            }
+                
         }
 
 
